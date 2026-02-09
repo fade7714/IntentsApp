@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         button_url.setOnClickListener(v ->{
             String url = edit_url.getText().toString().trim();
             if (!url.startsWith("http://") && !url.startsWith("https://")){
-                url += "https://";
+                url = "https://" + url;
             }
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));
